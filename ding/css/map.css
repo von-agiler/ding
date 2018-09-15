@@ -1,0 +1,34 @@
+
+.map {
+    margin: auto;
+    position: relative;
+    border: #eeeeee solid 1px;
+    width: 1016px;
+    height: 720px;
+}
+
+
+.map-Z-1F {
+    background: url(../images/Z-1F.jpg) no-repeat;
+    background-size: cover;
+}
+
+.map-Z-2F {
+    background: url(../images/Z-2F.jpg) no-repeat;
+    background-size: cover;
+}
+
+.map-B-1F {
+    background: url(../images/B-1F.jpg) no-repeat;
+    background-size: cover;
+}
+
+.map-D-4F {
+    background: url(../images/D-4F.jpg) no-repeat;
+    background-size: cover;
+}
+
+.map-D-5F {
+    background: url(../images/D-5F.jpg) no-repeat;
+    background-size: cover;
+}
