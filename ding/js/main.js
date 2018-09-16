@@ -33,7 +33,8 @@ function 着色() {
 
         $(this).addClass('s' + r);
         比例缩放($(this));
-             
+
+        $(this).text($(this).attr('id'));
 
     });
 
@@ -48,6 +49,8 @@ function 着色() {
         $sub_rooms.each(function (i) {
             $(this).addClass('s' + r);
             比例缩放($(this));
+
+            $(this).text($(this).attr('id'));
 
         });
 
