@@ -8,27 +8,32 @@
 }
 
 
-.map-Z-1F {
-    background: url(../images/Z-1F.jpg) no-repeat;
+.map-Z-1 {
+    background: url(../images/Z-1.jpg) no-repeat;
     background-size: cover;
 }
 
-.map-Z-2F {
-    background: url(../images/Z-2F.jpg) no-repeat;
+.map-Z-2 {
+    background: url(../images/Z-2.jpg) no-repeat;
     background-size: cover;
 }
 
-.map-B-1F {
-    background: url(../images/B-1F.jpg) no-repeat;
+.map-Z-2 {
+    background: url(../images/Z-3.jpg) no-repeat;
     background-size: cover;
 }
 
-.map-D-4F {
-    background: url(../images/D-4F.jpg) no-repeat;
+.map-B-1 {
+    background: url(../images/B-1.jpg) no-repeat;
     background-size: cover;
 }
 
-.map-D-5F {
-    background: url(../images/D-5F.jpg) no-repeat;
+.map-D-4 {
+    background: url(../images/D-4.jpg) no-repeat;
+    background-size: cover;
+}
+
+.map-D-5 {
+    background: url(../images/D-5.jpg) no-repeat;
     background-size: cover;
 }
