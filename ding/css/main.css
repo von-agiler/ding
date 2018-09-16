@@ -7,28 +7,3 @@ body {
     margin: 0px;
 }
 
-
-
-.s1 {
-    background-color: aqua;
-    opacity: 0.5;
-}
-
-.s2 {
-    background-color: darkmagenta;
-    opacity: 0.5;
-}
-
-.s3 {
-    background-color: gold;
-    opacity: 0.5;
-}
-
-
-.room {
-    display: inline-block;
-    position: absolute;
-    background-size: contain;
-    
-    /*border: solid 1px;*/
-}
