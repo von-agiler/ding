@@ -8,7 +8,7 @@ $(function () {
     //计算缩放率();
 
     按状态查询();
-        
+
 
 
 });
@@ -21,24 +21,24 @@ function 着色(状态_list) {
         for (var i = 0; i < 状态_list.Count; i++) {
 
             if (状态_list.DataTable[i].结构号 == 结构号) {
-                
+
                 return 状态_list.DataTable[i].状态;
 
             }
 
         }
-        
+
         //未知状态 x
         return "x";
 
     }
-    
+
     //处理单独room
     var $rooms = $('.room').not(".room-group .room");
     var r;
     $rooms.each(function (i) {
 
-        状态 = 取状态($(this).attr("id")) ;
+        状态 = 取状态($(this).attr("id"));
 
         $(this).addClass('s' + 状态);
         //比例缩放($(this));
@@ -80,7 +80,7 @@ function status_onchange() {
 function 按状态查询() {
 
     $('.map').not('.hide').addClass('hide');
-    
+
 
     $.ajax({
         type: "POST",
@@ -92,20 +92,19 @@ function 按状态查询() {
 
         success: function (data) {
             console.log(data);
-            
+
             for (var i = 0; i < data.层_list.Count; i++) {
 
                 var map_class = '.map-';
+                var 楼号 = data.层_list.DataTable[i].层.substr(0, 1).toUpperCase();
+                if (楼号 == 'A' || 楼号 == 'E') {
 
-                if (data.层_list.DataTable[i].层.substring(0,1).toUpperCase() == 'A'
-                    || data.层_list.DataTable[i].层.substring(0, 1).toUpperCase() == 'E') {
-
-                    map_class = map_class + 'A-E' + data.层_list.DataTable[i].层.substring(0, 1);
+                    map_class = map_class + 'A-E-' + data.层_list.DataTable[i].层.substr(2, 1);
                 }
                 else {
 
                     map_class = map_class + data.层_list.DataTable[i].层;
-                    
+
                 }
 
                 $(map_class).removeClass('hide');
