@@ -95,14 +95,20 @@ function 按状态查询() {
             
             for (var i = 0; i < data.层_list.Count; i++) {
 
-                if (data.层_list.DataTable[i].层.toUpperCase() == 'JA') {
+                var map_class = '.map-';
 
+                if (data.层_list.DataTable[i].层.substring(0,1).toUpperCase() == 'A'
+                    || data.层_list.DataTable[i].层.substring(0, 1).toUpperCase() == 'E') {
 
+                    map_class = map_class + 'A-E' + data.层_list.DataTable[i].层.substring(0, 1);
+                }
+                else {
+
+                    map_class = map_class + data.层_list.DataTable[i].层;
+                    
                 }
 
-
-                $('.map-' + data.层_list.DataTable[i].层).removeClass('hide');
-
+                $(map_class).removeClass('hide');
             }
 
 
