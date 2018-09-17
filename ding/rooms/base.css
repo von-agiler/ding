@@ -3,7 +3,7 @@
     display: inline-block;
     position: absolute;
     background-size: contain;
-    /*border: solid 1px;*/
+    border: #0026ff dotted 1px;
     color: white;
     font-size: xx-small;
 }
@@ -13,27 +13,27 @@
     margin: auto;
     position: relative;
     border: #eeeeee solid 1px;
-    width: 1016px;
-    height: 720px;
+    width: 1080px; /*1016px;*/
+    height: 765px; /*720px;*/
 }
 
 
+.s0 {
+    background-color:green;
+    opacity: 0.5;
+}
+
 .s1 {
-    background-color: aqua;
+    background-color:blueviolet;
     opacity: 0.5;
 }
 
 .s2 {
-    background-color: darkmagenta;
+    background-color:blue;
     opacity: 0.5;
 }
 
-.s3 {
-    background-color: gold;
-    opacity: 0.5;
-}
-
-.s4 {
-    background-color: red;
+.s8 {
+    background-color:yellow;
     opacity: 0.5;
 }

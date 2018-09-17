@@ -2,37 +2,42 @@
     top: 184px;
     left: 150px;
     width: 50px;
-    height: 79px;
+    height: 91px;
 }
+
 
 #JZ4002 {
     top: 198px;
     left: 245px;
     width: 50px;
-    height: 94px;
+    height: 102px;
 }
+
 
 #JZ4003-C {
     top: 275px;
     left: 163px;
     width: 58px;
-    height: 37px;
+    height: 46px;
 }
+
 
 #JZ4004-E {
     top: 300px;
     left: 270px;
     width: 45px;
-    height: 89px;
+    height: 100px;
 }
+
 
 
 #JZ4005-D {
     top: 321px;
     left: 181px;
     width: 53px;
-    height: 96px;
+    height: 103px;
 }
+
 
 #JZ4006-E {
     top: 400px;
@@ -40,12 +45,14 @@
     width: 60px;
     height: 28px;
 }
+
 #JZ4007-D {
     top: 424px;
     left: 200px;
     width: 55px;
-    height: 31px;
+    height: 37px;
 }
+
 
 
 #JZ4008_1 {
@@ -61,12 +68,14 @@
     height: 70px;
 }
 
+
 #JZ4009 {
     top: 461px;
     left: 217px;
     width: 48px;
     height: 57px;
 }
+
 
 #JZ4011_2 {
     top: 525px;
@@ -75,11 +84,12 @@
     height: 55px;
 }
 
+
 #JZ4011_1 {
-    top: 579px;
+    top: 580px;
     left: 238px;
     width: 123px;
-    height: 61px;
+    height: 60px;
 }
 
 #JZ4010 {
@@ -89,12 +99,14 @@
     height: 63px;
 }
 
+
 #JZ4013 {
     top: 579px;
     left: 360px;
     width: 37px;
     height: 61px;
 }
+
 
 #JZ4012 {
     top: 494px;
@@ -103,11 +115,20 @@
     height: 63px;
 }
 
+
 #JZ4015 {
     top: 579px;
     left: 396px;
     width: 37px;
     height: 61px;
+}
+
+
+#JZ4014 {
+    top: 494px;
+    left: 432px;
+    width: 36px;
+    height: 63px;
 }
 
 #JZ4017 {
@@ -117,12 +138,14 @@
     height: 61px;
 }
 
+
 #JZ4016 {
     top: 494px;
     left: 468px;
     width: 37px;
     height: 63px;
 }
+
 
 #JZ4019 {
     top: 579px;
@@ -131,12 +154,14 @@
     height: 61px;
 }
 
+
 #JZ4018 {
     top: 494px;
     left: 504px;
     width: 35px;
     height: 63px;
 }
+
 
 #JZ4021 {
     top: 579px;
@@ -145,16 +170,19 @@
     height: 61px;
 }
 
+
 #JZ4020 {
-    top: 603px;
-    left: 494px;
+    top: 494px;
+    left: 603px;
     width: 142px;
     height: 146px;
 }
- 
+
 #JZ4022 {
     top: 494px;
     left: 744px;
     width: 176px;
     height: 146px;
 }
+
+

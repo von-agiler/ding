@@ -1,5 +1,4 @@
 body {
-    
 }
 
 .container {
@@ -7,3 +6,6 @@ body {
     margin: 0px;
 }
 
+.hide {
+    display: none;
+}

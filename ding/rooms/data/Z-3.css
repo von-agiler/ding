@@ -62,8 +62,8 @@
 }
         
 #JZ3007-B_2 {
-    top: 535px;
-    left: 204px;
+    top: 525px;
+    left: 240px;
     width: 39px;
     height: 116px;
 }  
@@ -110,16 +110,16 @@
     height: 56px;
 }  
 #JZ3002-I {
-    top: 369px;
-    left: 282px;
-    width: 49px;
-    height: 68px;
-} 
- #JZ3001_1 {
     top: 186px;
     left: 232px;
     width: 55px;
     height: 61px;
+} 
+ #JZ3001_1 {
+    top: 186px;
+    left: 151px;
+    width: 48px;
+    height: 73px;
 } 
 
  #JZ3001_2 {

@@ -98,11 +98,18 @@
     height: 107px;
 }
 
-#JB1013 {
+#JB1013_1 {
     top: 254px;
     left: 540px;
     width: 228px;
     height: 386px;
+}
+
+#JB1013_2 {
+    top: 640px;
+    left: 705px;
+    width: 63px;
+    height: 26px;
 }
 
 #JB1014 {

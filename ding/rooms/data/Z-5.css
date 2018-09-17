@@ -80,7 +80,7 @@
 
 #JZ5010 {
     top: 494px;
-    left: 131px;
+    left: 313px;
     width: 94px;
     height: 62px;
 }
@@ -99,9 +99,15 @@
     height: 62px;
 }
 
-#JZ5013 {
+#JZ5013_1 {
     top: 494px;
     left: 602px;
     width: 318px;
     height: 148px;
+}
+#JZ5013_2 {
+    top: 579px;
+    left: 540px;
+    width: 62px;
+    height: 63px;
 }
