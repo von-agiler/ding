@@ -13,27 +13,27 @@
     margin: auto;
     position: relative;
     border: #eeeeee solid 1px;
-    width: 1080px; /*1016px;*/
-    height: 765px; /*720px;*/
+    width: 1080px;
+    height: 765px;
 }
 
 
 .s0 {
-    background-color:green;
+    background-color: green;
     opacity: 0.5;
 }
 
 .s1 {
-    background-color:blueviolet;
+    background-color: blueviolet;
     opacity: 0.5;
 }
 
 .s2 {
-    background-color:blue;
+    background-color: blue;
     opacity: 0.5;
 }
 
 .s8 {
-    background-color:yellow;
+    background-color: yellow;
     opacity: 0.5;
 }

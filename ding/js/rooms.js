@@ -5,7 +5,9 @@ var _vh = 1;
 
 $(function () {
 
-    //计算缩放率();
+    计算缩放率();
+
+
 
     按状态查询();
 
@@ -16,34 +18,54 @@ $(function () {
 
 function 着色(状态_list) {
 
+    function box处理($box, 状态) {
+                
+
+        if (状态) {
+            $box.addClass('s' + 状态.状态);
+
+            if (状态.门牌号) {
+                $box.bind("click", function () {
+
+                    //alert(状态.门牌号);
+
+                    //window.location = 'rooms/detail/' + 状态.门牌号+'.jpg';
+
+                    toast(状态.门牌号);
+                });
+
+                $box.html(状态.门牌号);//$box.attr('id') + '<br/>' + 
+            }
+
+        }
+        //比例缩放($box);
+
+        
+
+    }
+    
     function 取状态(结构号) {
-       
+
         for (var j = 0; j < 状态_list.Count; j++) {
 
             if (状态_list.DataTable[j].结构号.toUpperCase() == 结构号.toUpperCase()) {
 
-                return 状态_list.DataTable[j].状态;
+                return 状态_list.DataTable[j];
 
             }
 
         }
 
-        //未知状态 x
-        return "x";
 
     }
 
     //处理单独room
     var $rooms = $('.room').not(".room-group .room");
-    
+
     $rooms.each(function (i) {
 
-        状态 = 取状态($(this).attr("id"));
-
-        $(this).addClass('s' + 状态);
-        //比例缩放($(this));
-
-        $(this).text($(this).attr('id'));
+        var 状态1 = 取状态($(this).attr("id"));
+        box处理($(this), 状态1);
 
     });
 
@@ -53,19 +75,14 @@ function 着色(状态_list) {
 
         var $sub_rooms = $(this).children('.room');
 
-        状态 = 取状态($(this).attr("id"));
+        var 状态2 = 取状态($(this).attr("id"));
 
         $sub_rooms.each(function (i) {
 
-
-            $(this).addClass('s' + 状态);
-            //比例缩放($(this));
-
-            $(this).text($(this).attr('id'));
+            box处理($(this), 状态2);
 
         });
-
-
+        
 
     });
 
