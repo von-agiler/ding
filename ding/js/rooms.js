@@ -17,12 +17,12 @@ $(function () {
 function 着色(状态_list) {
 
     function 取状态(结构号) {
+       
+        for (var j = 0; j < 状态_list.Count; j++) {
 
-        for (var i = 0; i < 状态_list.Count; i++) {
+            if (状态_list.DataTable[j].结构号.toUpperCase() == 结构号.toUpperCase()) {
 
-            if (状态_list.DataTable[i].结构号 == 结构号) {
-
-                return 状态_list.DataTable[i].状态;
+                return 状态_list.DataTable[j].状态;
 
             }
 
@@ -35,7 +35,7 @@ function 着色(状态_list) {
 
     //处理单独room
     var $rooms = $('.room').not(".room-group .room");
-    var r;
+    
     $rooms.each(function (i) {
 
         状态 = 取状态($(this).attr("id"));
@@ -56,6 +56,8 @@ function 着色(状态_list) {
         状态 = 取状态($(this).attr("id"));
 
         $sub_rooms.each(function (i) {
+
+
             $(this).addClass('s' + 状态);
             //比例缩放($(this));
 
@@ -77,6 +79,30 @@ function status_onchange() {
 }
 
 
+function 显示结果(data) {
+    console.log(data);
+
+    for (var i = 0; i < data.层_list.Count; i++) {
+
+        var map_class = '.map-';
+        var 楼号 = data.层_list.DataTable[i].层.substr(0, 1).toUpperCase();
+        if (楼号 == 'A' || 楼号 == 'E') {
+
+            map_class = map_class + 'A-E-' + data.层_list.DataTable[i].层.substr(2, 1);
+        }
+        else {
+
+            map_class = map_class + data.层_list.DataTable[i].层;
+
+        }
+
+        $(map_class).removeClass('hide');
+    }
+
+
+    着色(data.状态_list);
+}
+
 function 按状态查询() {
 
     $('.map').not('.hide').addClass('hide');
@@ -91,27 +117,8 @@ function 按状态查询() {
         },
 
         success: function (data) {
-            console.log(data);
 
-            for (var i = 0; i < data.层_list.Count; i++) {
-
-                var map_class = '.map-';
-                var 楼号 = data.层_list.DataTable[i].层.substr(0, 1).toUpperCase();
-                if (楼号 == 'A' || 楼号 == 'E') {
-
-                    map_class = map_class + 'A-E-' + data.层_list.DataTable[i].层.substr(2, 1);
-                }
-                else {
-
-                    map_class = map_class + data.层_list.DataTable[i].层;
-
-                }
-
-                $(map_class).removeClass('hide');
-            }
-
-
-            着色(data.状态_list);
+            显示结果(data);
 
         },
         error: function (data) {
