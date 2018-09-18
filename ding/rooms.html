@@ -2,10 +2,16 @@
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
+
     <meta charset="utf-8" />
     <title></title>
     <script src="js/jquery-3.1.0.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/bootstrap-select.js"></script>
     <script src="js/rooms.js"></script>
+
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/bootstrap-select.css" rel="stylesheet" />
 
     <link href="css/main.css" rel="stylesheet" />
     <link href="rooms/base.css" rel="stylesheet" />
@@ -39,14 +45,15 @@
 
 </head>
 <body>
+    
 
-    <div>
-        <select id="select_status" onchange="status_onchange(this)" style="font-size:xx-large;">
+    <div class="topbar">
+        <select class="selectpicker" id="select_status" onchange="status_onchange(this)">
             <option value="all">全部</option>
-            <option value="0">可租</option>
-            <option value="1">已租</option>
-            <option value="2">预定</option>
-            <option value="8">配套用房</option>
+            <option value="0" data-content="<span class='label selectpicker-label s0'>可    租</span>">可租</option>
+            <option value="1" data-content="<span class='label selectpicker-label s1'>已    租</span>">已租</option>
+            <option value="2" data-content="<span class='label selectpicker-label s2'>预    定</span>">预定</option>
+            <option value="8" data-content="<span class='label selectpicker-label s8'>配套用房</span>">配套用房</option>
         </select>
     </div>
 
@@ -110,7 +117,7 @@
 
 
         </div>
-        
+
         <div class="map map-A-E-2">
 
             <div class="room-group" id="JE2001">
@@ -136,7 +143,7 @@
 
 
         </div>
-        
+
         <div class="map map-B-1">
 
             <div class="room" id="JB1001"></div>
@@ -236,7 +243,7 @@
                 <div class="room" id="JB4002_2"></div>
             </div>
 
-          
+
         </div>
 
         <div class="map map-B-5">

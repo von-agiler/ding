@@ -1,6 +1,17 @@
 body {
 }
 
+.topbar {
+    margin: 30px;
+    margin-left: 100px;
+}
+
+.selectpicker-label {
+    width: 100%;
+    color:white;
+}
+
+
 .container {
     width: 100%;
     margin: 0px;
