@@ -1,4 +1,15 @@
 
+.map {
+    margin: auto;
+    position: relative;
+    border: #eeeeee solid 1px;
+    width: 100%;
+    max-width: 1080px;
+    height: 0px;
+}
+
+
+
 .map-A-E-1 {
     background: url(map/A-E-1.jpg) no-repeat;
     background-size: cover;
@@ -108,4 +119,3 @@
     background: url(map/Z-5.jpg) no-repeat;
     background-size: cover;
 }
-

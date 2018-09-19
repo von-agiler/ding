@@ -3,7 +3,7 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 
-    <meta charset="utf-8" />
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1"/>
     <title></title>
     <script src="js/jquery-3.1.0.min.js"></script>
     <script src="js/bootstrap.js"></script>
@@ -15,9 +15,8 @@
     <link href="css/bootstrap-select.css" rel="stylesheet" />
 
     <link href="css/main.css" rel="stylesheet" />
-    <link href="rooms/base.css" rel="stylesheet" />
+    <link href="rooms/room.css" rel="stylesheet" />
     <link href="rooms/map.css" rel="stylesheet" />
-
 
     <link href="rooms/data/A-E-1.css" rel="stylesheet" />
     <link href="rooms/data/A-E-2.css" rel="stylesheet" />
@@ -46,34 +45,20 @@
 
 </head>
 <body>
-    <div class="modal fade" id="xToast" role="dialog">
-        <div class="modal-dialog modal-sm">
-            <!-- Begin modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">房间信息</h4>
-                </div>
-                <div class="modal-body">
-                    <p id="xToastContent"></p>
-                </div>
-            </div>
-            <!--End modal content-->
-        </div>
-    </div>
 
-    <div class="topbar">
-        <select class="selectpicker" id="select_status" onchange="status_onchange(this)">
-            <option value="all">全部</option>
-            <option value="0" data-content="<span class='label selectpicker-label s0'>可    租</span>">可租</option>
-            <option value="1" data-content="<span class='label selectpicker-label s1'>已    租</span>">已租</option>
-            <option value="2" data-content="<span class='label selectpicker-label s2'>预    定</span>">预定</option>
-        </select>
-    </div>
+
+    
 
 
     <div class="container">
-
+        <div class="topbar">
+            <select class="selectpicker" id="select_status" onchange="status_onchange(this)">
+                <option value="all">全部</option>
+                <option value="0" data-content="<span class='label selectpicker-label s0'>可    租</span>">可租</option>
+                <option value="1" data-content="<span class='label selectpicker-label s1'>已    租</span>">已租</option>
+                <option value="2" data-content="<span class='label selectpicker-label s2'>预    定</span>">预定</option>
+            </select>
+        </div>
         <div class="map map-A-E-1">
             <div class="room" id="JA1001"></div>
             <div class="room" id="JA1002"></div>
@@ -568,5 +553,20 @@
     </div>
 
 
+    <div class="modal fade" id="xToast" role="dialog">
+        <div class="modal-dialog modal-sm">
+            <!-- Begin modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">房间信息</h4>
+                </div>
+                <div class="modal-body">
+                    <p id="xToastContent"></p>
+                </div>
+            </div>
+            <!--End modal content-->
+        </div>
+    </div>
 </body>
 </html>

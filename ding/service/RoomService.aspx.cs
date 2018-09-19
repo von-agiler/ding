@@ -44,7 +44,7 @@ public partial class service_RoomService : charming.web.DataPage
 
             sql =
                //"select 结构号,状态 from QC_结构号"
-               "select A.结构号,A.面积,A.状态,B.门牌号 from QC_结构号 A left outer join QC_结构号列表 B on(A.结构号= B.结构号)"
+               "select A.结构号,A.结构面积,A.状态,B.门牌号 from QC_结构号 A left outer join QC_结构号列表 B on(A.结构号= B.结构号)"
                + " where 状态=@1 or @1='all'";
 
 

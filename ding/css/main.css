@@ -3,13 +3,11 @@ body {
 
 .topbar {
     
-    margin-left: 100px;
-    margin-top: 30px;
-    height: 60px;
+    margin-top:10px;
+    margin-bottom:10px;
 }
 
 .selectpicker-label {
-    
     width: 100%;
     color: white;
 }
@@ -18,6 +16,7 @@ body {
 .container {
     width: 100%;
     margin: 0px;
+    overflow-y: auto;
 }
 
 .hide {
