@@ -6,11 +6,17 @@ body {
     margin-bottom: 10px;
 }
 
-.room-info 
-div {
-    padding-left:20px;
+.room-info div {
+    padding-left: 20px;
     display: inline-block;
     text-align: left;
+    color:darkgrey;
+}
+.room-info table {
+    width:100%;
+}
+.room-info span {
+    color:cadetblue;
 }
 
 .selectpicker-label {
