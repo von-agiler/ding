@@ -40,13 +40,14 @@ public partial class service_RoomService : charming.web.DataPage
 
 
             new charming.data.TableDataGateway().Query(层_list, sql, 状态);
-            
+
 
             sql =
                //"select 结构号,状态 from QC_结构号"
-               "select A.结构号,A.结构面积,A.状态,B.门牌号 from QC_结构号 A left outer join QC_结构号列表 B on(A.结构号= B.结构号)"
+               //"select A.结构号,A.结构面积,A.状态,B.门牌号 from QC_结构号 A left outer join QC_结构号列表 B on(A.结构号= B.结构号)"
+               //+ " where 状态=@1 or @1='all'";
+               "select * from v_结构号资料全"
                + " where 状态=@1 or @1='all'";
-
 
             new charming.data.TableDataGateway().Query(状态_list, sql, 状态);
 

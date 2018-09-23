@@ -2,9 +2,15 @@ body {
 }
 
 .topbar {
-    
-    margin-top:10px;
-    margin-bottom:10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.room-info 
+div {
+    padding-left:20px;
+    display: inline-block;
+    text-align: left;
 }
 
 .selectpicker-label {
@@ -15,6 +21,7 @@ body {
 
 .container {
     width: 100%;
+    min-height:600px;
     margin: 0px;
     overflow-y: auto;
 }

@@ -28,14 +28,23 @@ function 着色(状态_list) {
         if (状态) {
             $box.addClass('s' + 状态.状态);
 
-            if (状态.门牌号) {
+            if (状态) {
                 $box.bind("click", function () {
+                    
 
-                    //alert(状态.门牌号);
+                    //清除信息
+                    $(".room-info div").text('');
 
-                    //window.location = 'rooms/detail/' + 状态.门牌号+'.jpg';
+                    //写信息
+                    for (p in 状态) {
+                        console.log(p + "=" + 状态[p])
+                        $('#' + p).text(状态[p]);
 
-                    toast(状态.门牌号);
+                    }
+
+
+                    $('#room-info').modal('show');
+
                 });
 
                 $box.html(状态.门牌号);//$box.attr('id') + '<br/>' + 
@@ -105,9 +114,7 @@ function status_onchange() {
 function 显示结果(data) {
     console.log(data);
 
-    
-
-    console.log(_vw + ',' + _vh);
+    //console.log(_vw + ',' + _vh);
 
     //显示层
     for (var i = 0; i < data.层_list.Count; i++) {
