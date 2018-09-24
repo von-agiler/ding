@@ -38,7 +38,7 @@ function 着色(状态_list) {
                     //写信息
                     for (p in 状态) {
                         console.log(p + "=" + 状态[p])
-                        $('#' + p).text(状态[p] || '待定');
+                        $('#' + p).text(状态[p]);
 
                     }
 
