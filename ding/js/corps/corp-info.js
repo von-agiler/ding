@@ -63,7 +63,7 @@
 
         for (var j = 1; j <= 3; j++) {
 
-            if (news['现存文件' + j] && news['现存文件' + j] != '') {
+            //if (news['现存文件' + j] && news['现存文件' + j] != '') {
 
                 $('#swiper-wrapper').append(
                     '<div class="swiper-slide"><div class="corp-photo">'
@@ -72,7 +72,7 @@
 
                 );
 
-            }
+           // }
 
 
         }
