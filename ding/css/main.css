@@ -1,4 +1,4 @@
-body {
+﻿body {
 }
 
 .topbar {
@@ -19,6 +19,7 @@ body {
     color:cadetblue;
 }
 
+
 .selectpicker-label {
     width: 100%;
     color: white;
@@ -35,3 +36,13 @@ body {
 .hide {
     display: none;
 }
+
+.corp-photo {
+
+}
+
+    .corp-photo img {
+        background-size: cover;
+        height: 200px;
+        width: 100%;
+    }
