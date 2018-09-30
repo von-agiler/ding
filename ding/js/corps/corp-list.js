@@ -38,7 +38,8 @@ $(function () {
 
     };
 
-    _pages.page_list.请求数据();
+    _pages.page_list.请求_top_n();
+    _pages.page_list.查询();
     _pages.page_list.show();
     _page_current = _pages.page_list;
 
@@ -56,7 +57,7 @@ function page_list() {
     this.show = function () {
         me.init();
         page_div.show();
-                
+
     };
     this.hide = function () {
         page_div.hide();
@@ -69,19 +70,35 @@ function page_list() {
         me.hide();
     };
 
-    this.请求数据 = function () {
-
-        return do_请求数据();
-
-    }
-
-    function do_请求数据() {
-        
+    this.请求_top_n = function () {
 
         $.ajax({
             type: "POST",
-            url: "service/CorpsService.aspx?api=all",
+            url: "service/CorpsService.aspx?api=top-n",
             dataType: 'json',
+            data: { n: 6 },
+
+            success: function (data) {
+
+                显示_top_n(data.DataTable);
+
+            },
+            error: function (data) {
+                console.log(data);
+                return alert(data.responseText);
+            }
+        });
+
+    }
+    this.查询 = function () {
+        
+        var key = $('#search-key').val();
+
+        $.ajax({
+            type: "POST",
+            url: "service/CorpsService.aspx?api=query",
+            dataType: 'json',
+            data: { key: key },
 
             success: function (data) {
 
@@ -98,14 +115,41 @@ function page_list() {
             }
         });
 
+    }
+
+    function do_请求数据() {
+ 
+
+        
+
 
     }
 
+    function 显示_top_n(data) {
+
+        for (var i = 0; i < data.length; i++) {
+
+            var news = data[i];
+
+            _swiper_list.appendSlide(
+                '<div class="swiper-slide">'
+                + '<div class="corp-photo"><img src="http://www.youthcreatorvalley.com/wx/UploadFiles/' + news['现存文件1'] + '"/></div>'
+                + '<div class="swiper-text">' + html_encode(news.客户名称) + '</div>'
+                + '</div>'
+            );
+
+        }
+
+        _swiper_list.init();
+
+    }
 
 
     function 显示结果(data) {
 
         var $list = $("#news-list");
+
+        $list.empty();
 
         for (var i = 0; i < data.length; i++) {
 
@@ -118,40 +162,17 @@ function page_list() {
                 + '<div class="news-list-item">'
                 + '<div class="news-thumb"><img src="http://www.youthcreatorvalley.com/wx/UploadFiles/' + news.现存文件1 + '"/></div>'
                 + '<div class="news-info">'
-                + '<div class="news-info-title">' + news.客户名称 + '</div>'
+                + '<div class="news-info-title">' + html_encode(news.客户名称) + '</div>'
                 + '<div class="news-info-date">'
-                + news.企业简介
+                + html_encode(news.企业简介)
                 + '</div></div></div></a></li>';
 
             $list.append(innHtml);
 
-            if (i <= 5) {
-
-
-                _swiper_list.appendSlide(
-                    '<div class="swiper-slide"><div class="corp-photo">'
-                    + '<img src="http://www.youthcreatorvalley.com/wx/UploadFiles/' + news['现存文件1'] + '"/>'
-                    + '</div></div>'
-                );
-
-                /*
-                $('#swiper-wrapper-list').append(
-                    '<div class="swiper-slide"><div class="corp-photo">'
-                    + '<img src="http://www.youthcreatorvalley.com/wx/UploadFiles/' + news['现存文件1'] + '"/>'
-                    + '</div></div>'
-
-                );
-                */
-
-            }
 
             //$('#' + aid).bind("click", function () { 显示企业信息(news) });
 
-        }        
-        
-        _swiper_list.init();
-
-
+        }
 
     }
 

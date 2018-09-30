@@ -10,13 +10,15 @@
     padding-left: 20px;
     display: inline-block;
     text-align: left;
-    color:darkgrey;
+    color: darkgrey;
 }
+
 .room-info table {
-    width:100%;
+    width: 100%;
 }
+
 .room-info span {
-    color:cadetblue;
+    color: cadetblue;
 }
 
 
@@ -28,7 +30,7 @@
 
 .container {
     width: 100%;
-    min-height:600px;
+    min-height: 600px;
     margin: 0px;
     overflow-y: auto;
 }
@@ -38,7 +40,6 @@
 }
 
 .corp-photo {
-
 }
 
     .corp-photo img {
@@ -46,3 +47,12 @@
         height: 200px;
         width: 100%;
     }
+
+
+.swiper-text {
+    text-align: center;
+    background-color: silver;
+    color: white;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
