@@ -1,9 +1,31 @@
 var _list_data;
-
+var _swiper_list
 
 $(function () {
 
-    
+    _swiper_list = new Swiper('#swiper-container-list', {
+        //direction: 'horizontal',
+        init: false,
+        speed: 200,
+        delay: 1000,
+        //freeMode : true,
+        //freeModeSticky : true,
+
+        autoplay: true,
+        loop: true,
+        effect: 'coverflow',//cube,fade,slide,coverflow,flip
+        //分页器
+        pagination: {
+            el: '.swiper-pagination',
+            //bulletActiveClass: 'my-bullet-active',
+            //currentClass : 'my-pagination-current',
+
+        },
+        //scrollbar: {el: '.swiper-scrollbar',},
+        initialSlide: 0,
+
+
+    });
 
 
 
@@ -34,7 +56,7 @@ function page_list() {
     this.show = function () {
         me.init();
         page_div.show();
-
+                
     };
     this.hide = function () {
         page_div.hide();
@@ -54,8 +76,7 @@ function page_list() {
     }
 
     function do_请求数据() {
-
-
+        
 
         $.ajax({
             type: "POST",
@@ -85,15 +106,15 @@ function page_list() {
     function 显示结果(data) {
 
         var $list = $("#news-list");
-        //data.forEach(function (news) {
+
         for (var i = 0; i < data.length; i++) {
 
             var news = data[i];
 
             //var aid = 'corp-info-' + news.object_id;
 
-            var innHtml = '<li>'
-                + '<a href="#page_info?i=' + i + '">'
+            var innHtml =
+                '<li><a href="#page_info?i=' + i + '">'
                 + '<div class="news-list-item">'
                 + '<div class="news-thumb"><img src="http://www.youthcreatorvalley.com/wx/UploadFiles/' + news.现存文件1 + '"/></div>'
                 + '<div class="news-info">'
@@ -104,20 +125,37 @@ function page_list() {
 
             $list.append(innHtml);
 
+            if (i <= 5) {
+
+
+                _swiper_list.appendSlide(
+                    '<div class="swiper-slide"><div class="corp-photo">'
+                    + '<img src="http://www.youthcreatorvalley.com/wx/UploadFiles/' + news['现存文件1'] + '"/>'
+                    + '</div></div>'
+                );
+
+                /*
+                $('#swiper-wrapper-list').append(
+                    '<div class="swiper-slide"><div class="corp-photo">'
+                    + '<img src="http://www.youthcreatorvalley.com/wx/UploadFiles/' + news['现存文件1'] + '"/>'
+                    + '</div></div>'
+
+                );
+                */
+
+            }
+
             //$('#' + aid).bind("click", function () { 显示企业信息(news) });
-            
-        }
+
+        }        
+        
+        _swiper_list.init();
+
 
 
     }
 
 
-
-
-
-    function 相当于私有方法() {
-
-    }
 
 
 }

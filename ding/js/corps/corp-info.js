@@ -1,32 +1,38 @@
-﻿function page_info() {
+﻿var _swiper_info
+
+function page_info() {
     var me = this;
     var page_div = $("#page_info");
+
+    _swiper_info = new Swiper('#swiper-container-info', {
+        //direction: 'horizontal',
+        init: false,
+        speed: 200,
+        delay: 1000,
+        //freeMode : true,
+        //freeModeSticky : true,
+
+        autoplay: true,
+        loop: true,
+        effect: 'coverflow',//cube,fade,slide,coverflow,flip
+        //分页器
+        pagination: {
+            el: '.swiper-pagination',
+            //bulletActiveClass: 'my-bullet-active',
+            //currentClass : 'my-pagination-current',
+
+        },
+        //scrollbar: {el: '.swiper-scrollbar',},
+        initialSlide: 0,
+        //updateOnImagesReady: true
+
+    });
+    
+    
 
     this.show = function () {
         me.init();
         page_div.show();
-
-        var mySwiper = new Swiper('#swiper-container', {
-            //direction: 'horizontal',
-            speed: 500,
-            delay: 1000,
-            //freeMode : true,
-            //freeModeSticky : true,
-
-            autoplay: true,
-            loop: true,
-            effect: 'coverflow',//cube,fade,slide,coverflow,flip
-            // 如果需要分页器
-            pagination: {
-                el: '.swiper-pagination',
-                //bulletActiveClass: 'my-bullet-active',
-                //currentClass : 'my-pagination-current',
-
-            },
-            //scrollbar: {el: '.swiper-scrollbar',},
-
-        });
-
 
     };
     this.hide = function () {
@@ -38,8 +44,7 @@
         $("#text-info div").text('');
 
         显示信息();
-
-
+        
 
     };
     this.close = function () {
@@ -53,36 +58,35 @@
 
         var news = _list_data[i];
         console.log(news);
+                
+
+        $('#title-客户名称').text(html_encode(news.客户名称));
 
 
-        $('#swiper-wrapper').empty();
-
-
-        
-        $('#title-客户名称').text(newline(html_encode(news.客户名称)));
+        $('#swiper-wrapper-info').empty();
+        //_swiper_info.removeAllSlides();
 
         for (var j = 1; j <= 3; j++) {
 
-            //if (news['现存文件' + j] && news['现存文件' + j] != '') {
+            if (news['现存文件' + j] && news['现存文件' + j] != '') {
 
-                $('#swiper-wrapper').append(
+                _swiper_info.appendSlide(
                     '<div class="swiper-slide"><div class="corp-photo">'
                     + '<img src="http://www.youthcreatorvalley.com/wx/UploadFiles/' + news['现存文件' + j] + '"/>'
-                    + '</div>'
-
+                    + '</div></div>'
                 );
 
-           //}
-
+            }
 
         }
 
-
+        _swiper_info.init();
+        
 
         //写信息
         for (p in news) {
 
-            $('#' + p).text(newline(html_encode(news[p])));
+            $('#' + p).html(newline(html_encode(news[p])));
 
         }
 
