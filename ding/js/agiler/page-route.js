@@ -49,3 +49,6 @@ function getHashParam(name) {
     }
     return null;
 }
+
+
+
