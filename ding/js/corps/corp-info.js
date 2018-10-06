@@ -104,9 +104,9 @@ function 显示信息(data) {
 
     }
 
-    if (news["全景地图"]) {
+    if (全景地图) {
 
-        $('#全景地图').attr("href",news["全景地图"]).text("全景地图");
+        $('#全景地图').attr("href", 全景地图).text("全景地图");
     }
     else {
         $('#全景地图').attr("href", "http://www.toocoolvr.com").text("还没有全景图,请联系图酷科技");
