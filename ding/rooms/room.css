@@ -25,7 +25,12 @@
     opacity: 0.5;
 }
 
-.s8 {
+.s3 {
+    background-color: red;
+    opacity: 0.5;
+}
+
+.s4 {
     background-color: yellow;
     opacity: 0.5;
 }

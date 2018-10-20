@@ -36,7 +36,7 @@ public partial class service_RoomService : charming.web.DataPage
 
             string sql =
                 "select distinct substring(结构号,2,1) + '-' + substring(结构号,3,1) as 层 from QC_结构号"
-                + " where 状态=@1 or @1='all'";
+                + " where 状态=@1 or @1='-1'";
 
 
             new charming.data.TableDataGateway().Query(层_list, sql, 状态);
@@ -47,7 +47,7 @@ public partial class service_RoomService : charming.web.DataPage
                //"select A.结构号,A.结构面积,A.状态,B.门牌号 from QC_结构号 A left outer join QC_结构号列表 B on(A.结构号= B.结构号)"
                //+ " where 状态=@1 or @1='all'";
                "select * from v_结构号资料全"
-               + " where 状态=@1 or @1='all'";
+               + " where 状态=@1 or @1='-1'";
 
             new charming.data.TableDataGateway().Query(状态_list, sql, 状态);
 
@@ -55,6 +55,8 @@ public partial class service_RoomService : charming.web.DataPage
             查询返回包 result = new 查询返回包();
             result.层_list = 层_list;
             result.状态_list = 状态_list;
+
+
 
             return Serialize(result);
         }

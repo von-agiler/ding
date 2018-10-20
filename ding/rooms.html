@@ -137,10 +137,12 @@
     <div class="container">
         <div class="topbar">
             <select class="selectpicker" id="select_status" onchange="status_onchange(this)">
-                <option value="all">全部</option>
+                <option value="-1">全部</option>
                 <option value="0" data-content="<span class='label selectpicker-label s0'>可    租</span>">可租</option>
                 <option value="1" data-content="<span class='label selectpicker-label s1'>已    租</span>">已租</option>
                 <option value="2" data-content="<span class='label selectpicker-label s2'>预    定</span>">预定</option>
+                <option value="3" data-content="<span class='label selectpicker-label s3'>60天内到期</span>">60天内到期</option>
+                <option value="4" data-content="<span class='label selectpicker-label s4'>到期退出</span>">到期退出</option>
             </select>
         </div>
         <div class="map map-A-E-1">
