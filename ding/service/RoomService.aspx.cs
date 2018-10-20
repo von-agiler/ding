@@ -35,7 +35,7 @@ public partial class service_RoomService : charming.web.DataPage
             charming.data.Table 状态_list = new charming.data.Table();
 
             string sql =
-                "select distinct substring(结构号,2,1) + '-' + substring(结构号,3,1) as 层 from QC_结构号"
+                "select distinct substring(结构号,2,1) + '-' + substring(结构号,3,1) as 层 from v_结构号资料全"
                 + " where 状态=@1 or @1='-1'";
 
 
